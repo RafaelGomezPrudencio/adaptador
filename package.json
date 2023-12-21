@@ -1,0 +1,26 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "custom ip, mask and gateway",
+  "main": "netScript.js",
+  "bin": {
+    "netScript": "./netScript.js"
+  },
+  "scripts": {
+    "build": "npm run build-win7 && npm run build-win10 && npm run build-linux && npm run build-macos",
+    "build-win7": "pkg --targets node12-win-x64 --output dist/netScript-win7.exe .",
+    "build-win10": "pkg --targets node18-win-x64 --output dist/netScript-win10.exe .",
+    "build-linux": "pkg --targets node8-linux-x64 --output dist/netScript-linux .",
+    "build-macos": "pkg --targets node18-macos-x64 --output dist/netScript-macos ."
+  },
+  "pkg": {
+    "assets": [
+      "views/**/*", 
+      "public/**/*"
+    ],    
+    "scripts": "mods/**/*.js",
+    "outputPath": "dist"
+    }, 
+  "author": "",
+  "license": "ISC"
+}
